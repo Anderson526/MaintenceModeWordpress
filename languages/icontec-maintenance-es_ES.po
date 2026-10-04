@@ -1,0 +1,176 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Icontec Maintenance Mode 2.0.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
+"X-Domain: icontec-maintenance\n"
+
+msgid "Site under maintenance"
+msgstr "Sitio en mantenimiento"
+
+msgid "We are performing scheduled maintenance. We will be back soon."
+msgstr "Estamos realizando mantenimiento programado. Volveremos pronto."
+
+msgid "Maintenance Window"
+msgstr "Ventana de Mantenimiento"
+
+msgid "Appearance"
+msgstr "Apariencia"
+
+msgid "Roles"
+msgstr "Roles"
+
+msgid "Scheduling"
+msgstr "Programación"
+
+msgid "Donations"
+msgstr "Donaciones"
+
+msgid "Choose image"
+msgstr "Elegir imagen"
+
+msgid "Use this image"
+msgstr "Usar esta imagen"
+
+msgid "You do not have permission to do this."
+msgstr "No tienes permiso para hacer esto."
+
+msgid "Maintenance mode activated."
+msgstr "Modo mantenimiento activado."
+
+msgid "Maintenance mode deactivated."
+msgstr "Modo mantenimiento desactivado."
+
+msgid "Maintenance mode is ACTIVE"
+msgstr "El modo mantenimiento está ACTIVO"
+
+msgid "Maintenance mode is inactive"
+msgstr "El modo mantenimiento está inactivo"
+
+msgid "Deactivate now"
+msgstr "Desactivar ahora"
+
+msgid "Activate now"
+msgstr "Activar ahora"
+
+msgid "Maintenance ON"
+msgstr "Mantenimiento ACTIVO"
+
+msgid "Appearance of the maintenance page"
+msgstr "Apariencia de la página de mantenimiento"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Message"
+msgstr "Mensaje"
+
+msgid "Message shown to visitors during maintenance."
+msgstr "Mensaje mostrado a los visitantes durante el mantenimiento."
+
+msgid "Colors"
+msgstr "Colores"
+
+msgid "Background"
+msgstr "Fondo"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Accent / buttons"
+msgstr "Acento / botones"
+
+msgid "Corporate logo"
+msgstr "Logo corporativo"
+
+msgid "Select from media library"
+msgstr "Seleccionar de la biblioteca de medios"
+
+msgid "Background image (optional)"
+msgstr "Imagen de fondo (opcional)"
+
+msgid "Maintenance dates"
+msgstr "Fechas de mantenimiento"
+
+msgid "Show scheduled start/end dates to visitors on the maintenance page."
+msgstr "Mostrar las fechas programadas de inicio/fin a los visitantes en la página de mantenimiento."
+
+msgid "Plugin language"
+msgstr "Idioma del plugin"
+
+msgid "Site default"
+msgstr "Predeterminado del sitio"
+
+msgid "Language used on the maintenance page and plugin texts."
+msgstr "Idioma usado en la página de mantenimiento y los textos del plugin."
+
+msgid "Access control by role"
+msgstr "Control de acceso por rol"
+
+msgid "Users with the selected roles will be able to keep browsing the site while maintenance mode is active. Everyone else will see the maintenance page."
+msgstr "Los usuarios con los roles seleccionados podrán seguir navegando el sitio mientras el modo mantenimiento esté activo. El resto verá la página de mantenimiento."
+
+msgid "Allowed roles"
+msgstr "Roles permitidos"
+
+msgid "always allowed"
+msgstr "siempre permitido"
+
+msgid "Automatic scheduling (cron jobs)"
+msgstr "Programación automática (cron jobs)"
+
+msgid "Enable scheduling"
+msgstr "Habilitar programación"
+
+msgid "Automatically activate and deactivate maintenance mode at the dates below."
+msgstr "Activar y desactivar automáticamente el modo mantenimiento en las fechas indicadas."
+
+msgid "Maintenance start"
+msgstr "Inicio del mantenimiento"
+
+msgid "Maintenance end"
+msgstr "Fin del mantenimiento"
+
+msgid "Scheduled: %s"
+msgstr "Programado: %s"
+
+msgid "Timezone"
+msgstr "Zona horaria"
+
+msgid "Dates use the site timezone configured in Settings → General."
+msgstr "Las fechas usan la zona horaria del sitio configurada en Ajustes → Generales."
+
+msgid "Buy me a coffee"
+msgstr "Invítame un café"
+
+msgid "If this plugin is useful to you, consider supporting its development with a small donation. Thank you!"
+msgstr "Si este plugin te resulta útil, considera apoyar su desarrollo con una pequeña donación. ¡Gracias!"
+
+msgid "PayPal configuration"
+msgstr "Configuración de PayPal"
+
+msgid "PayPal Client ID"
+msgstr "Client ID de PayPal"
+
+msgid "Create a REST app to get your Client ID: %s"
+msgstr "Crea una app REST para obtener tu Client ID: %s"
+
+msgid "Currency"
+msgstr "Moneda"
+
+msgid "Donate now"
+msgstr "Donar ahora"
+
+msgid "Enter your PayPal Client ID to enable the donation buttons."
+msgstr "Introduce tu Client ID de PayPal para habilitar los botones de donación."
+
+msgid "Maintenance Mode"
+msgstr "Modo Mantenimiento"
+
+msgid "Start:"
+msgstr "Inicio:"
+
+msgid "Expected return:"
+msgstr "Regreso estimado:"
