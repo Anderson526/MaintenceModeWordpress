@@ -39,9 +39,6 @@ class IM_Settings {
 			'schedule_enabled' => 0,
 			'start_datetime'   => '', // Local time, format Y-m-d\TH:i.
 			'end_datetime'     => '',
-			// Donations (PayPal REST / JS SDK).
-			'paypal_client_id' => '',
-			'paypal_currency'  => 'USD',
 		);
 	}
 
@@ -106,7 +103,6 @@ class IM_Settings {
 					break;
 
 				case 'title':
-				case 'paypal_client_id':
 					$out[ $key ] = sanitize_text_field( $value );
 					break;
 
@@ -140,9 +136,6 @@ class IM_Settings {
 					$out[ $key ] = in_array( $value, array( '', 'es_ES', 'en_US' ), true ) ? $value : '';
 					break;
 
-				case 'paypal_currency':
-					$out[ $key ] = in_array( $value, array( 'USD', 'EUR', 'MXN', 'COP' ), true ) ? $value : 'USD';
-					break;
 			}
 		}
 

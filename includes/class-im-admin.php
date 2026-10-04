@@ -356,63 +356,107 @@ class IM_Admin {
 	}
 
 	private static function render_donations_tab( $s ) {
-		$opt = IM_Settings::OPTION;
 		?>
+		<style>
+			.rm-donate-card {
+				width: 100%;
+				max-width: 100%;
+				margin: 24px auto 0;
+				padding: 32px 28px;
+				border-radius: 18px;
+				text-align: center;
+				background: linear-gradient(180deg, #fffdf7 0%, #ffffff 100%);
+				border: 1px solid rgba(233, 193, 98, 0.55);
+				box-shadow: 0 12px 24px rgba(77, 59, 17, 0.08), 0 2px 8px rgba(77, 59, 17, 0.04);
+				box-sizing: border-box;
+			}
+			.rm-donate-card h2 {
+				margin: 12px 0 8px;
+				font-size: 22px;
+				line-height: 1.3;
+				color: #1d2327;
+			}
+			.rm-donate-card p {
+				margin: 0 0 18px;
+				color: #50575e;
+				font-size: 14px;
+				line-height: 1.6;
+			}
+			.rm-coffee-emoji {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 64px;
+				height: 64px;
+				font-size: 38px;
+				border-radius: 16px;
+				background: rgba(255, 196, 57, 0.12);
+				box-shadow: inset 0 0 0 1px rgba(255, 196, 57, 0.25);
+				animation: rm-steam 2.4s ease-in-out infinite;
+			}
+			@keyframes rm-steam {
+				0%, 100% { transform: translateY(0) rotate(0deg); }
+				50% { transform: translateY(-4px) rotate(-4deg); }
+			}
+			.rm-donate-button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+				min-width: 220px;
+				padding: 14px 28px;
+				border: none;
+				border-radius: 999px;
+				background: linear-gradient(135deg, #ffd76a 0%, #f9b52a 100%);
+				color: #3c2a00;
+				font-size: 15px;
+				font-weight: 800;
+				text-decoration: none;
+				letter-spacing: 0.01em;
+				box-shadow: 0 10px 18px rgba(198, 136, 15, 0.28);
+				transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+			}
+			.rm-donate-button:hover,
+			.rm-donate-button:focus-visible {
+				transform: translateY(-2px) scale(1.02);
+				box-shadow: 0 16px 24px rgba(198, 136, 15, 0.35);
+				filter: brightness(1.02);
+				color: #3c2a00;
+			}
+			.rm-donate-button:active {
+				transform: translateY(0) scale(0.99);
+			}
+			.rm-donate-button-coffee {
+				display: inline-block;
+				font-size: 18px;
+			}
+			.rm-donate-link-note {
+				margin-top: 16px;
+				font-size: 12px;
+				color: #6b7280;
+			}
+			@media (max-width: 480px) {
+				.rm-donate-card {
+					padding: 24px 18px;
+				}
+				.rm-donate-button {
+					width: 100%;
+				}
+			}
+		</style>
 		<div class="im-donations-hero">
-			<h2 class="im-donations-title">☕ <?php esc_html_e( 'Buy me a coffee', 'icontec-maintenance' ); ?></h2>
-			<p><?php esc_html_e( 'If this plugin is useful to you, consider supporting its development with a small donation. Thank you!', 'icontec-maintenance' ); ?></p>
-			<div class="im-coffee-anim" aria-hidden="true">
-				<span class="im-steam"></span><span class="im-steam"></span><span class="im-steam"></span>
-				<span class="im-cup">☕</span>
+			<div class="rm-card rm-donate-card">
+				<div class="rm-coffee-emoji" aria-hidden="true">☕</div>
+				<h2><?php esc_html_e( '¿Te resulta útil Maintenance Window?', 'icontec-maintenance' ); ?></h2>
+				<p><?php esc_html_e( 'Tu apoyo ayuda a mantener y mejorar este plugin. Puedes hacer una donación directa desde PayPal.', 'icontec-maintenance' ); ?></p>
+				<a href="<?php echo esc_url( 'https://paypal.me/AndersonChila?locale.x=en_US&country.x=CO' ); ?>" class="rm-donate-button" target="_blank" rel="noopener noreferrer">
+					<span class="rm-donate-button-coffee" aria-hidden="true">☕</span>
+					<?php esc_html_e( 'Donar con PayPal', 'icontec-maintenance' ); ?>
+				</a>
+				<p class="rm-donate-link-note"><?php esc_html_e( 'Se abrirá PayPal en una nueva ventana.', 'icontec-maintenance' ); ?></p>
 			</div>
 		</div>
 
-		<form method="post" action="options.php">
-			<?php settings_fields( 'im_settings_group' ); ?>
-			<h3><?php esc_html_e( 'PayPal configuration', 'icontec-maintenance' ); ?></h3>
-			<table class="form-table" role="presentation">
-				<tr>
-					<th scope="row"><label for="im-paypal-client"><?php esc_html_e( 'PayPal Client ID', 'icontec-maintenance' ); ?></label></th>
-					<td>
-						<input type="text" id="im-paypal-client" class="regular-text" name="<?php echo esc_attr( $opt ); ?>[paypal_client_id]" value="<?php echo esc_attr( $s['paypal_client_id'] ); ?>">
-						<p class="description">
-							<?php
-							printf(
-								/* translators: %s: link to PayPal docs */
-								esc_html__( 'Create a REST app to get your Client ID: %s', 'icontec-maintenance' ),
-								'<a href="https://developer.paypal.com/api/rest" target="_blank" rel="noopener noreferrer">developer.paypal.com/api/rest</a>'
-							);
-							?>
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="im-paypal-currency"><?php esc_html_e( 'Currency', 'icontec-maintenance' ); ?></label></th>
-					<td>
-						<select id="im-paypal-currency" name="<?php echo esc_attr( $opt ); ?>[paypal_currency]">
-							<?php foreach ( array( 'USD', 'EUR', 'MXN', 'COP' ) as $cur ) : ?>
-								<option value="<?php echo esc_attr( $cur ); ?>" <?php selected( $cur, $s['paypal_currency'] ); ?>><?php echo esc_html( $cur ); ?></option>
-							<?php endforeach; ?>
-						</select>
-					</td>
-				</tr>
-			</table>
-			<?php submit_button(); ?>
-		</form>
-
-		<?php if ( $s['paypal_client_id'] ) : ?>
-			<h3><?php esc_html_e( 'Donate now', 'icontec-maintenance' ); ?></h3>
-			<div class="im-donate-amounts">
-				<?php foreach ( array( 3, 5, 10 ) as $amount ) : ?>
-					<button type="button" class="button im-amount-btn" data-amount="<?php echo esc_attr( $amount ); ?>">
-						<?php echo esc_html( $amount . ' ' . $s['paypal_currency'] ); ?>
-					</button>
-				<?php endforeach; ?>
-			</div>
-			<div id="im-paypal-buttons" data-currency="<?php echo esc_attr( $s['paypal_currency'] ); ?>"></div>
-			<script src="<?php echo esc_url( 'https://www.paypal.com/sdk/js?client-id=' . rawurlencode( $s['paypal_client_id'] ) . '&currency=' . rawurlencode( $s['paypal_currency'] ) ); ?>"></script>
-		<?php else : ?>
-			<p class="description"><?php esc_html_e( 'Enter your PayPal Client ID to enable the donation buttons.', 'icontec-maintenance' ); ?></p>
-		<?php endif;
+		<?php
 	}
 }
